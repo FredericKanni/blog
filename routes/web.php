@@ -150,8 +150,18 @@ Route::post('/clients','ClientsController@store') ;
 //35 rajouter un champs email ds migration client 
 //   $table->string('email');
 //puis php artisan migrate:refresh
-
-
+//36 rajouter un input + invalide msg 
+//37 rajouter msg ds client controller 
+//38rajouter ds le validate et avans le save de la bdd 
+//39afficher ds la vue client/index.blade.php
+//40 client active ou pas video 11
+//41ajout champ + messge error
+//42client mesg d erroor + ajout bdd 
+//43 eloquent where 
+//44 modificaion du where  + scope() ds model client 
+//45on renomme ts les speudo par name 
+//46 on efface ds ctrl des truc 
+//47 error securite orm mass ssignment   d ou protect fillable 
 
 
 
