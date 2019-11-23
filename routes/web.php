@@ -164,6 +164,29 @@ Route::post('/clients','ClientsController@store') ;
 //47 error securite orm mass ssignment   d ou protect fillable 
 
 
+//48 on crre un model entreprise  + -m pour creer une moigration 
+// 49 ds la migration on y met  $table->string('name');
+
+//ds le odel on met fillable ou guarded    protected  $guarded = [];
+//  php artisan migrate:refresh 
+//
+// on akout une etp ds la bdd 
+//php artisan tinker
+// App\Entreprise::create(['name' => 'ma super entreprise']);
+// App\Entreprise::create(['name' => 'ma mega entreprise']);
+// laravel relationship
+//one to many 
+//une etp has many  clients 
+//un client belongto une entreprise 
+//on creer fct clients et etp ds les model 
+// pouis ds les migrationb  $table->unsignedInteger()('entreprise_id');
+// exit pour quitter tinker
+// refresh 
+
+//13  8.50
+
+
+
 
 
 

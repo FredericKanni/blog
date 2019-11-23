@@ -19,4 +19,10 @@ class Client extends Model
     {
         return $query->where('status', 1)->get();
     }
+
+
+    public function entreprise()
+    {
+        return $this->belongsTo('App\Entreprise');
+    }
 }
