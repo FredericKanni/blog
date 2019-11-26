@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Client;
+use App\Entreprise;
 
 class ClientsController extends Controller
 {
@@ -26,11 +27,16 @@ class ClientsController extends Controller
        //#43 a la place d utiliser ce tableau on utilise
          $clients = Client::status();
         //#28 on oublie pas pas d importer la class app\Client  ctrl space
-            
+
+        //on va aller recuperer ts les ept 
+        $entreprises = Entreprise::all();
             
             //on passe notre tableau de donne en 2em argument de notre function view
             //qui aura une cle le premier clients(ça peut nimp quel nom ex:data ) et qui aura comme valeur/pointera vers notre tableau de donnes $clients
-        return view('clients.index', ['data' => $clients]);
+       
+       
+        //   return view('clients.index', ['data' => $entreprises]);
+     return view('clients.index',compact('clients','entreprises'));
 
     }
 
@@ -49,7 +55,8 @@ class ClientsController extends Controller
      $data=request()->validate([
         'name' => 'required|min:3',
         'email' => 'required|email',
-        'status' => 'required|integer'
+        'status' => 'required|integer',
+        'entreprise_id' => 'required|integer'
         ],$messages);
 
         //dd($data);

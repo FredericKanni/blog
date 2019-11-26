@@ -184,7 +184,9 @@ Route::post('/clients','ClientsController@store') ;
 // refresh 
 
 //13  8.50
-
+//copy le formulaire pour cham^p etp 
+// client controller recupere ts les etp 
+//attention changer data to client a cose du compact 
 
 
 

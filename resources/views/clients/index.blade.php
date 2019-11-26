@@ -28,8 +28,10 @@
 
 <!-- #9 meme chose avec la syntaxe de blade  -->
 <ul>
-  @foreach($data as $client )
-  <li>{{$client->name}} <em class="text-muted">{{$client->email}}</em></li>
+  {{-- ds le model client on a une fonction entreprise qui retourne l entreprise et on chaine direct pour voir le nom de celle ci 
+    parce que  $client depend de Client --}}
+  @foreach($clients as $client )
+  <li>{{$client->name}} <em class="text-muted">{{$client->email}}</em> <em class="text-muted">{{$client->entreprise->name}}</em></li>
   @endforeach
 </ul>
 <hr>
@@ -88,6 +90,28 @@
 
       {{-- 33 cherche ds la variable errorle 1er msg d  lerruer pour pseudo  --}}
       {{$errors->first('status')}}
+    </div>
+
+    @enderror
+
+  </div>
+
+{{-- copy le formulaire --}}
+  <div class="form-group">
+    <select name="entreprise_id" id="" class="custom-select  @error('entreprise_id') is-invalid @enderror">
+      @foreach ($entreprises as $entreprise )
+    <option value="{{$entreprise->id}}">{{$entreprise->name}}</option>
+      @endforeach
+     
+    
+    </select>
+
+    @error('entreprise_id')
+    <div class="invalide-feedback">
+
+
+      {{-- 33 cherche ds la variable errorle 1er msg d  lerruer pour pseudo  --}}
+      {{$errors->first('entreprise_id')}}
     </div>
 
     @enderror

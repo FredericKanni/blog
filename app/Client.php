@@ -9,7 +9,7 @@ class Client extends Model
 
     //47
     protected $fillable = [
-        'name','email','status'];
+        'name','email','status','entreprise_id'];
 
         //47bis laxiste
        // protected $guarded = [];
